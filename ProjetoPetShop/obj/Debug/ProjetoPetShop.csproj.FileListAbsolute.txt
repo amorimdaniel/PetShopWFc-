@@ -1,0 +1,10 @@
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\bin\Debug\ProjetoPetShop.exe.config
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\bin\Debug\ProjetoPetShop.exe
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\bin\Debug\ProjetoPetShop.pdb
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.csproj.AssemblyReference.cache
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.Form1.resources
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.Properties.Resources.resources
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.csproj.GenerateResource.cache
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.csproj.CoreCompileInputs.cache
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.exe
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.pdb
