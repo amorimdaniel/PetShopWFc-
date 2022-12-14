@@ -8,3 +8,4 @@ C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetSh
 C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.csproj.CoreCompileInputs.cache
 C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.exe
 C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.pdb
+C:\Users\dan-a\source\repos\ProjetoPetShop\ProjetoPetShop\obj\Debug\ProjetoPetShop.frmCadCliente.resources
