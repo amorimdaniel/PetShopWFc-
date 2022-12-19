@@ -56,5 +56,23 @@ namespace ProjetoPetShop
         {
             groupBox1.Enabled = true;
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Confimar exclusão", "PetShop", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    clienteBindingSource.RemoveCurrent();
+                    clienteTableAdapter.Update(petshopDataSet.cliente);
+                }
+            }
+            catch (Exception)
+            {
+                clienteTableAdapter.Fill(petshopDataSet.cliente);
+                MessageBox.Show("Não pode ser excluído");
+            }
+
+        }
     }
 }

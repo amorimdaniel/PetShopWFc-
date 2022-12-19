@@ -30,6 +30,7 @@ namespace ProjetoPetShop
         private void InitializeComponent()
         {
             this.panelLeral = new System.Windows.Forms.Panel();
+            this.panelSelecao = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.Button();
             this.btnAgendamento = new System.Windows.Forms.Button();
             this.btnServicos = new System.Windows.Forms.Button();
@@ -37,10 +38,9 @@ namespace ProjetoPetShop
             this.btnRaca = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.panelTopo = new System.Windows.Forms.Panel();
-            this.panelSelecao = new System.Windows.Forms.Panel();
-            this.panelCentral = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.panelLeral.SuspendLayout();
             this.panelTopo.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +60,14 @@ namespace ProjetoPetShop
             this.panelLeral.Name = "panelLeral";
             this.panelLeral.Size = new System.Drawing.Size(274, 652);
             this.panelLeral.TabIndex = 0;
+            // 
+            // panelSelecao
+            // 
+            this.panelSelecao.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panelSelecao.Location = new System.Drawing.Point(3, 6);
+            this.panelSelecao.Name = "panelSelecao";
+            this.panelSelecao.Size = new System.Drawing.Size(14, 76);
+            this.panelSelecao.TabIndex = 6;
             // 
             // btnInicio
             // 
@@ -138,24 +146,6 @@ namespace ProjetoPetShop
             this.panelTopo.Size = new System.Drawing.Size(1187, 67);
             this.panelTopo.TabIndex = 1;
             // 
-            // panelSelecao
-            // 
-            this.panelSelecao.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panelSelecao.Location = new System.Drawing.Point(3, 6);
-            this.panelSelecao.Name = "panelSelecao";
-            this.panelSelecao.Size = new System.Drawing.Size(14, 76);
-            this.panelSelecao.TabIndex = 6;
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.BackgroundImage = global::ProjetoPetShop.Properties.Resources.cachorro;
-            this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCentral.Location = new System.Drawing.Point(274, 67);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(913, 652);
-            this.panelCentral.TabIndex = 2;
-            // 
             // btnMinimizar
             // 
             this.btnMinimizar.BackgroundImage = global::ProjetoPetShop.Properties.Resources.minimizar;
@@ -181,6 +171,17 @@ namespace ProjetoPetShop
             this.btnFechar.TabIndex = 0;
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackgroundImage = global::ProjetoPetShop.Properties.Resources.cachorro;
+            this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCentral.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.panelCentral.Location = new System.Drawing.Point(274, 67);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(913, 652);
+            this.panelCentral.TabIndex = 2;
             // 
             // Form1
             // 

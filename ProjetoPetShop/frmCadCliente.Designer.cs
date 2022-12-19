@@ -373,6 +373,7 @@ namespace ProjetoPetShop
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // clienteBindingNavigatorSaveItem
             // 
