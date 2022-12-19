@@ -402,7 +402,7 @@ namespace ProjetoPetShop
             // 
             this.btnFoto.BackgroundImage = global::ProjetoPetShop.Properties.Resources.addImagem;
             this.btnFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFoto.Location = new System.Drawing.Point(469, 347);
+            this.btnFoto.Location = new System.Drawing.Point(469, 353);
             this.btnFoto.Name = "btnFoto";
             this.btnFoto.Size = new System.Drawing.Size(60, 56);
             this.btnFoto.TabIndex = 14;
@@ -414,7 +414,7 @@ namespace ProjetoPetShop
             this.cli_fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.clienteBindingSource, "cli_foto", true));
             this.cli_fotoPictureBox.Location = new System.Drawing.Point(342, 319);
             this.cli_fotoPictureBox.Name = "cli_fotoPictureBox";
-            this.cli_fotoPictureBox.Size = new System.Drawing.Size(121, 110);
+            this.cli_fotoPictureBox.Size = new System.Drawing.Size(121, 124);
             this.cli_fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cli_fotoPictureBox.TabIndex = 13;
             this.cli_fotoPictureBox.TabStop = false;
