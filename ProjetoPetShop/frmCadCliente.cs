@@ -74,5 +74,22 @@ namespace ProjetoPetShop
             }
 
         }
+
+        private void btnFoto_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Fotos (*.jgp; *.png;) | *.jpg; *.png";
+            try
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    cli_fotoPictureBox.Image = new Bitmap(openFileDialog1.FileName);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao carregar a imagem", "PetShop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }

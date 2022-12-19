@@ -47,24 +47,26 @@ namespace ProjetoPetShop
             this.cli_emailTextBox = new System.Windows.Forms.TextBox();
             this.cli_cpfMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.cli_enderecoTextBox = new System.Windows.Forms.TextBox();
-            this.cli_fotoPictureBox = new System.Windows.Forms.PictureBox();
             this.clienteTableAdapter = new ProjetoPetShop.petshopDataSetTableAdapters.clienteTableAdapter();
             this.tableAdapterManager = new ProjetoPetShop.petshopDataSetTableAdapters.TableAdapterManager();
             this.clienteBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.clienteBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnFoto = new System.Windows.Forms.Button();
+            this.cli_fotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             cli_codigoLabel = new System.Windows.Forms.Label();
             cli_nomeLabel = new System.Windows.Forms.Label();
             cli_celularLabel = new System.Windows.Forms.Label();
@@ -75,9 +77,9 @@ namespace ProjetoPetShop
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cli_fotoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).BeginInit();
             this.clienteBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cli_fotoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // cli_codigoLabel
@@ -145,6 +147,7 @@ namespace ProjetoPetShop
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnFoto);
             this.groupBox1.Controls.Add(cli_codigoLabel);
             this.groupBox1.Controls.Add(this.cli_codigoLabel1);
             this.groupBox1.Controls.Add(cli_nomeLabel);
@@ -230,15 +233,6 @@ namespace ProjetoPetShop
             this.cli_enderecoTextBox.Size = new System.Drawing.Size(243, 28);
             this.cli_enderecoTextBox.TabIndex = 11;
             // 
-            // cli_fotoPictureBox
-            // 
-            this.cli_fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.clienteBindingSource, "cli_foto", true));
-            this.cli_fotoPictureBox.Location = new System.Drawing.Point(342, 319);
-            this.cli_fotoPictureBox.Name = "cli_fotoPictureBox";
-            this.cli_fotoPictureBox.Size = new System.Drawing.Size(121, 110);
-            this.cli_fotoPictureBox.TabIndex = 13;
-            this.cli_fotoPictureBox.TabStop = false;
-            // 
             // clienteTableAdapter
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
@@ -294,24 +288,6 @@ namespace ProjetoPetShop
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(36, 36);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(36, 36);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
@@ -332,6 +308,29 @@ namespace ProjetoPetShop
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -349,11 +348,6 @@ namespace ProjetoPetShop
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -404,6 +398,31 @@ namespace ProjetoPetShop
             this.btnEditar.Text = "Editar";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // btnFoto
+            // 
+            this.btnFoto.BackgroundImage = global::ProjetoPetShop.Properties.Resources.addImagem;
+            this.btnFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFoto.Location = new System.Drawing.Point(469, 347);
+            this.btnFoto.Name = "btnFoto";
+            this.btnFoto.Size = new System.Drawing.Size(60, 56);
+            this.btnFoto.TabIndex = 14;
+            this.btnFoto.UseVisualStyleBackColor = true;
+            this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
+            // 
+            // cli_fotoPictureBox
+            // 
+            this.cli_fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.clienteBindingSource, "cli_foto", true));
+            this.cli_fotoPictureBox.Location = new System.Drawing.Point(342, 319);
+            this.cli_fotoPictureBox.Name = "cli_fotoPictureBox";
+            this.cli_fotoPictureBox.Size = new System.Drawing.Size(121, 110);
+            this.cli_fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cli_fotoPictureBox.TabIndex = 13;
+            this.cli_fotoPictureBox.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Title = "Escolha a foto";
+            // 
             // frmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,10 +440,10 @@ namespace ProjetoPetShop
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cli_fotoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).EndInit();
             this.clienteBindingNavigator.ResumeLayout(false);
             this.clienteBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cli_fotoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,5 +478,7 @@ namespace ProjetoPetShop
         private System.Windows.Forms.PictureBox cli_fotoPictureBox;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.Button btnFoto;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
