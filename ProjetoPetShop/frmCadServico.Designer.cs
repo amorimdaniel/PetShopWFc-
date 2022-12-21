@@ -36,16 +36,16 @@ namespace ProjetoPetShop
             System.Windows.Forms.Label serv_precoLabel;
             System.Windows.Forms.Label serv_tempoLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.petshopDataSet = new ProjetoPetShop.petshopDataSet();
             this.servicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.petshopDataSet = new ProjetoPetShop.petshopDataSet();
             this.servicoTableAdapter = new ProjetoPetShop.petshopDataSetTableAdapters.servicoTableAdapter();
             this.tableAdapterManager = new ProjetoPetShop.petshopDataSetTableAdapters.TableAdapterManager();
             this.servicoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -53,19 +53,19 @@ namespace ProjetoPetShop
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.servicoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.serv_codigoLabel1 = new System.Windows.Forms.Label();
-            this.serv_descricaoTextBox = new System.Windows.Forms.TextBox();
-            this.serv_precoTextBox = new System.Windows.Forms.TextBox();
-            this.serv_tempoTextBox = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.serv_codigoLabel1 = new System.Windows.Forms.Label();
+            this.serv_descricaoTextBox = new System.Windows.Forms.TextBox();
+            this.serv_precoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.serv_tempoComboBox = new System.Windows.Forms.ComboBox();
             serv_codigoLabel = new System.Windows.Forms.Label();
             serv_descricaoLabel = new System.Windows.Forms.Label();
             serv_precoLabel = new System.Windows.Forms.Label();
             serv_tempoLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicoBindingNavigator)).BeginInit();
             this.servicoBindingNavigator.SuspendLayout();
             this.SuspendLayout();
@@ -77,9 +77,9 @@ namespace ProjetoPetShop
             this.groupBox1.Controls.Add(serv_descricaoLabel);
             this.groupBox1.Controls.Add(this.serv_descricaoTextBox);
             this.groupBox1.Controls.Add(serv_precoLabel);
-            this.groupBox1.Controls.Add(this.serv_precoTextBox);
+            this.groupBox1.Controls.Add(this.serv_precoMaskedTextBox);
             this.groupBox1.Controls.Add(serv_tempoLabel);
-            this.groupBox1.Controls.Add(this.serv_tempoTextBox);
+            this.groupBox1.Controls.Add(this.serv_tempoComboBox);
             this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(68, 88);
@@ -89,15 +89,15 @@ namespace ProjetoPetShop
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do serviço";
             // 
-            // petshopDataSet
-            // 
-            this.petshopDataSet.DataSetName = "petshopDataSet";
-            this.petshopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // servicoBindingSource
             // 
             this.servicoBindingSource.DataMember = "servico";
             this.servicoBindingSource.DataSource = this.petshopDataSet;
+            // 
+            // petshopDataSet
+            // 
+            this.petshopDataSet.DataSetName = "petshopDataSet";
+            this.petshopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // servicoTableAdapter
             // 
@@ -147,6 +147,13 @@ namespace ProjetoPetShop
             this.servicoBindingNavigator.TabIndex = 1;
             this.servicoBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 36);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -180,16 +187,9 @@ namespace ProjetoPetShop
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 36);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // bindingNavigatorMoveNextItem
@@ -212,7 +212,7 @@ namespace ProjetoPetShop
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // bindingNavigatorAddNewItem
@@ -244,75 +244,6 @@ namespace ProjetoPetShop
             this.servicoBindingNavigatorSaveItem.Text = "Save Data";
             this.servicoBindingNavigatorSaveItem.Click += new System.EventHandler(this.servicoBindingNavigatorSaveItem_Click);
             // 
-            // serv_codigoLabel
-            // 
-            serv_codigoLabel.AutoSize = true;
-            serv_codigoLabel.Location = new System.Drawing.Point(243, 148);
-            serv_codigoLabel.Name = "serv_codigoLabel";
-            serv_codigoLabel.Size = new System.Drawing.Size(144, 29);
-            serv_codigoLabel.TabIndex = 0;
-            serv_codigoLabel.Text = "serv codigo:";
-            // 
-            // serv_codigoLabel1
-            // 
-            this.serv_codigoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicoBindingSource, "serv_codigo", true));
-            this.serv_codigoLabel1.Location = new System.Drawing.Point(424, 148);
-            this.serv_codigoLabel1.Name = "serv_codigoLabel1";
-            this.serv_codigoLabel1.Size = new System.Drawing.Size(100, 23);
-            this.serv_codigoLabel1.TabIndex = 1;
-            this.serv_codigoLabel1.Text = "label1";
-            // 
-            // serv_descricaoLabel
-            // 
-            serv_descricaoLabel.AutoSize = true;
-            serv_descricaoLabel.Location = new System.Drawing.Point(243, 183);
-            serv_descricaoLabel.Name = "serv_descricaoLabel";
-            serv_descricaoLabel.Size = new System.Drawing.Size(175, 29);
-            serv_descricaoLabel.TabIndex = 2;
-            serv_descricaoLabel.Text = "serv descricao:";
-            // 
-            // serv_descricaoTextBox
-            // 
-            this.serv_descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicoBindingSource, "serv_descricao", true));
-            this.serv_descricaoTextBox.Location = new System.Drawing.Point(424, 180);
-            this.serv_descricaoTextBox.Name = "serv_descricaoTextBox";
-            this.serv_descricaoTextBox.Size = new System.Drawing.Size(100, 34);
-            this.serv_descricaoTextBox.TabIndex = 3;
-            // 
-            // serv_precoLabel
-            // 
-            serv_precoLabel.AutoSize = true;
-            serv_precoLabel.Location = new System.Drawing.Point(243, 223);
-            serv_precoLabel.Name = "serv_precoLabel";
-            serv_precoLabel.Size = new System.Drawing.Size(132, 29);
-            serv_precoLabel.TabIndex = 4;
-            serv_precoLabel.Text = "serv preco:";
-            // 
-            // serv_precoTextBox
-            // 
-            this.serv_precoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicoBindingSource, "serv_preco", true));
-            this.serv_precoTextBox.Location = new System.Drawing.Point(424, 220);
-            this.serv_precoTextBox.Name = "serv_precoTextBox";
-            this.serv_precoTextBox.Size = new System.Drawing.Size(100, 34);
-            this.serv_precoTextBox.TabIndex = 5;
-            // 
-            // serv_tempoLabel
-            // 
-            serv_tempoLabel.AutoSize = true;
-            serv_tempoLabel.Location = new System.Drawing.Point(243, 263);
-            serv_tempoLabel.Name = "serv_tempoLabel";
-            serv_tempoLabel.Size = new System.Drawing.Size(138, 29);
-            serv_tempoLabel.TabIndex = 6;
-            serv_tempoLabel.Text = "serv tempo:";
-            // 
-            // serv_tempoTextBox
-            // 
-            this.serv_tempoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicoBindingSource, "serv_tempo", true));
-            this.serv_tempoTextBox.Location = new System.Drawing.Point(424, 260);
-            this.serv_tempoTextBox.Name = "serv_tempoTextBox";
-            this.serv_tempoTextBox.Size = new System.Drawing.Size(100, 34);
-            this.serv_tempoTextBox.TabIndex = 7;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -333,6 +264,83 @@ namespace ProjetoPetShop
             this.btnEditar.Text = "Editar";
             this.btnEditar.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // serv_codigoLabel
+            // 
+            serv_codigoLabel.AutoSize = true;
+            serv_codigoLabel.Location = new System.Drawing.Point(237, 152);
+            serv_codigoLabel.Name = "serv_codigoLabel";
+            serv_codigoLabel.Size = new System.Drawing.Size(144, 29);
+            serv_codigoLabel.TabIndex = 0;
+            serv_codigoLabel.Text = "serv codigo:";
+            // 
+            // serv_codigoLabel1
+            // 
+            this.serv_codigoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicoBindingSource, "serv_codigo", true));
+            this.serv_codigoLabel1.Location = new System.Drawing.Point(418, 152);
+            this.serv_codigoLabel1.Name = "serv_codigoLabel1";
+            this.serv_codigoLabel1.Size = new System.Drawing.Size(121, 23);
+            this.serv_codigoLabel1.TabIndex = 1;
+            this.serv_codigoLabel1.Text = "label1";
+            // 
+            // serv_descricaoLabel
+            // 
+            serv_descricaoLabel.AutoSize = true;
+            serv_descricaoLabel.Location = new System.Drawing.Point(237, 187);
+            serv_descricaoLabel.Name = "serv_descricaoLabel";
+            serv_descricaoLabel.Size = new System.Drawing.Size(175, 29);
+            serv_descricaoLabel.TabIndex = 2;
+            serv_descricaoLabel.Text = "serv descricao:";
+            // 
+            // serv_descricaoTextBox
+            // 
+            this.serv_descricaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicoBindingSource, "serv_descricao", true));
+            this.serv_descricaoTextBox.Location = new System.Drawing.Point(418, 184);
+            this.serv_descricaoTextBox.Name = "serv_descricaoTextBox";
+            this.serv_descricaoTextBox.Size = new System.Drawing.Size(121, 34);
+            this.serv_descricaoTextBox.TabIndex = 3;
+            // 
+            // serv_precoLabel
+            // 
+            serv_precoLabel.AutoSize = true;
+            serv_precoLabel.Location = new System.Drawing.Point(237, 227);
+            serv_precoLabel.Name = "serv_precoLabel";
+            serv_precoLabel.Size = new System.Drawing.Size(132, 29);
+            serv_precoLabel.TabIndex = 4;
+            serv_precoLabel.Text = "serv preco:";
+            // 
+            // serv_precoMaskedTextBox
+            // 
+            this.serv_precoMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicoBindingSource, "serv_preco", true));
+            this.serv_precoMaskedTextBox.Location = new System.Drawing.Point(418, 224);
+            this.serv_precoMaskedTextBox.Mask = "$ 99.99";
+            this.serv_precoMaskedTextBox.Name = "serv_precoMaskedTextBox";
+            this.serv_precoMaskedTextBox.Size = new System.Drawing.Size(121, 34);
+            this.serv_precoMaskedTextBox.TabIndex = 5;
+            // 
+            // serv_tempoLabel
+            // 
+            serv_tempoLabel.AutoSize = true;
+            serv_tempoLabel.Location = new System.Drawing.Point(237, 267);
+            serv_tempoLabel.Name = "serv_tempoLabel";
+            serv_tempoLabel.Size = new System.Drawing.Size(138, 29);
+            serv_tempoLabel.TabIndex = 6;
+            serv_tempoLabel.Text = "serv tempo:";
+            // 
+            // serv_tempoComboBox
+            // 
+            this.serv_tempoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicoBindingSource, "serv_tempo", true));
+            this.serv_tempoComboBox.FormattingEnabled = true;
+            this.serv_tempoComboBox.Items.AddRange(new object[] {
+            "15",
+            "30",
+            "45",
+            "60",
+            "120"});
+            this.serv_tempoComboBox.Location = new System.Drawing.Point(418, 264);
+            this.serv_tempoComboBox.Name = "serv_tempoComboBox";
+            this.serv_tempoComboBox.Size = new System.Drawing.Size(121, 37);
+            this.serv_tempoComboBox.TabIndex = 7;
+            // 
             // frmCadServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -348,8 +356,8 @@ namespace ProjetoPetShop
             this.Load += new System.EventHandler(this.frmCadServico_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicoBindingNavigator)).EndInit();
             this.servicoBindingNavigator.ResumeLayout(false);
             this.servicoBindingNavigator.PerformLayout();
@@ -378,11 +386,11 @@ namespace ProjetoPetShop
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton servicoBindingNavigatorSaveItem;
-        private System.Windows.Forms.Label serv_codigoLabel1;
-        private System.Windows.Forms.TextBox serv_descricaoTextBox;
-        private System.Windows.Forms.TextBox serv_precoTextBox;
-        private System.Windows.Forms.TextBox serv_tempoTextBox;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.ToolStripButton btnEditar;
+        private System.Windows.Forms.Label serv_codigoLabel1;
+        private System.Windows.Forms.TextBox serv_descricaoTextBox;
+        private System.Windows.Forms.MaskedTextBox serv_precoMaskedTextBox;
+        private System.Windows.Forms.ComboBox serv_tempoComboBox;
     }
 }
