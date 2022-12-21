@@ -29,21 +29,464 @@ namespace ProjetoPetShop
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label ag_codigoLabel;
+            System.Windows.Forms.Label ag_dataLabel;
+            System.Windows.Forms.Label ag_horarioLabel;
+            System.Windows.Forms.Label ag_situacaoLabel;
+            System.Windows.Forms.Label ag_animalLabel;
+            System.Windows.Forms.Label ag_totalLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadAgendamento));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.petshopDataSet = new ProjetoPetShop.petshopDataSet();
+            this.agendamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.agendamentoTableAdapter = new ProjetoPetShop.petshopDataSetTableAdapters.agendamentoTableAdapter();
+            this.tableAdapterManager = new ProjetoPetShop.petshopDataSetTableAdapters.TableAdapterManager();
+            this.ag_codigoTextBox = new System.Windows.Forms.TextBox();
+            this.ag_dataMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.ag_horarioMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.ag_situacaoComboBox = new System.Windows.Forms.ComboBox();
+            this.ag_animalComboBox = new System.Windows.Forms.ComboBox();
+            this.ag_totalTextBox = new System.Windows.Forms.TextBox();
+            this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.animalTableAdapter = new ProjetoPetShop.petshopDataSetTableAdapters.animalTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.agendamentoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.servicoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            ag_codigoLabel = new System.Windows.Forms.Label();
+            ag_dataLabel = new System.Windows.Forms.Label();
+            ag_horarioLabel = new System.Windows.Forms.Label();
+            ag_situacaoLabel = new System.Windows.Forms.Label();
+            ag_animalLabel = new System.Windows.Forms.Label();
+            ag_totalLabel = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agendamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agendamentoBindingNavigator)).BeginInit();
+            this.agendamentoBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(ag_codigoLabel);
+            this.groupBox1.Controls.Add(this.ag_codigoTextBox);
+            this.groupBox1.Controls.Add(ag_dataLabel);
+            this.groupBox1.Controls.Add(this.ag_dataMaskedTextBox);
+            this.groupBox1.Controls.Add(ag_horarioLabel);
+            this.groupBox1.Controls.Add(this.ag_horarioMaskedTextBox);
+            this.groupBox1.Controls.Add(ag_situacaoLabel);
+            this.groupBox1.Controls.Add(this.ag_situacaoComboBox);
+            this.groupBox1.Controls.Add(ag_animalLabel);
+            this.groupBox1.Controls.Add(this.ag_animalComboBox);
+            this.groupBox1.Controls.Add(ag_totalLabel);
+            this.groupBox1.Controls.Add(this.ag_totalTextBox);
+            this.groupBox1.Enabled = false;
+            this.groupBox1.Location = new System.Drawing.Point(13, 37);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(887, 307);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dados do agendamento";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(13, 348);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(887, 290);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Serviço";
+            // 
+            // petshopDataSet
+            // 
+            this.petshopDataSet.DataSetName = "petshopDataSet";
+            this.petshopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // agendamentoBindingSource
+            // 
+            this.agendamentoBindingSource.DataMember = "agendamento";
+            this.agendamentoBindingSource.DataSource = this.petshopDataSet;
+            // 
+            // agendamentoTableAdapter
+            // 
+            this.agendamentoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.agendamento_servicosTableAdapter = null;
+            this.tableAdapterManager.agendamentoTableAdapter = this.agendamentoTableAdapter;
+            this.tableAdapterManager.animalTableAdapter = this.animalTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clienteTableAdapter = null;
+            this.tableAdapterManager.racaTableAdapter = null;
+            this.tableAdapterManager.servicoTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ProjetoPetShop.petshopDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // ag_codigoLabel
+            // 
+            ag_codigoLabel.AutoSize = true;
+            ag_codigoLabel.Location = new System.Drawing.Point(316, 48);
+            ag_codigoLabel.Name = "ag_codigoLabel";
+            ag_codigoLabel.Size = new System.Drawing.Size(103, 25);
+            ag_codigoLabel.TabIndex = 0;
+            ag_codigoLabel.Text = "ag codigo:";
+            // 
+            // ag_codigoTextBox
+            // 
+            this.ag_codigoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agendamentoBindingSource, "ag_codigo", true));
+            this.ag_codigoTextBox.Location = new System.Drawing.Point(440, 45);
+            this.ag_codigoTextBox.Name = "ag_codigoTextBox";
+            this.ag_codigoTextBox.Size = new System.Drawing.Size(121, 30);
+            this.ag_codigoTextBox.TabIndex = 1;
+            // 
+            // ag_dataLabel
+            // 
+            ag_dataLabel.AutoSize = true;
+            ag_dataLabel.Location = new System.Drawing.Point(316, 84);
+            ag_dataLabel.Name = "ag_dataLabel";
+            ag_dataLabel.Size = new System.Drawing.Size(83, 25);
+            ag_dataLabel.TabIndex = 2;
+            ag_dataLabel.Text = "ag data:";
+            // 
+            // ag_dataMaskedTextBox
+            // 
+            this.ag_dataMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agendamentoBindingSource, "ag_data", true));
+            this.ag_dataMaskedTextBox.Location = new System.Drawing.Point(440, 81);
+            this.ag_dataMaskedTextBox.Mask = "00/00/0000";
+            this.ag_dataMaskedTextBox.Name = "ag_dataMaskedTextBox";
+            this.ag_dataMaskedTextBox.Size = new System.Drawing.Size(121, 30);
+            this.ag_dataMaskedTextBox.TabIndex = 3;
+            this.ag_dataMaskedTextBox.ValidatingType = typeof(System.DateTime);
+            // 
+            // ag_horarioLabel
+            // 
+            ag_horarioLabel.AutoSize = true;
+            ag_horarioLabel.Location = new System.Drawing.Point(316, 120);
+            ag_horarioLabel.Name = "ag_horarioLabel";
+            ag_horarioLabel.Size = new System.Drawing.Size(105, 25);
+            ag_horarioLabel.TabIndex = 4;
+            ag_horarioLabel.Text = "ag horario:";
+            // 
+            // ag_horarioMaskedTextBox
+            // 
+            this.ag_horarioMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agendamentoBindingSource, "ag_horario", true));
+            this.ag_horarioMaskedTextBox.Location = new System.Drawing.Point(440, 117);
+            this.ag_horarioMaskedTextBox.Mask = "00:00";
+            this.ag_horarioMaskedTextBox.Name = "ag_horarioMaskedTextBox";
+            this.ag_horarioMaskedTextBox.Size = new System.Drawing.Size(121, 30);
+            this.ag_horarioMaskedTextBox.TabIndex = 5;
+            this.ag_horarioMaskedTextBox.ValidatingType = typeof(System.DateTime);
+            // 
+            // ag_situacaoLabel
+            // 
+            ag_situacaoLabel.AutoSize = true;
+            ag_situacaoLabel.Location = new System.Drawing.Point(316, 156);
+            ag_situacaoLabel.Name = "ag_situacaoLabel";
+            ag_situacaoLabel.Size = new System.Drawing.Size(118, 25);
+            ag_situacaoLabel.TabIndex = 6;
+            ag_situacaoLabel.Text = "ag situacao:";
+            // 
+            // ag_situacaoComboBox
+            // 
+            this.ag_situacaoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agendamentoBindingSource, "ag_situacao", true));
+            this.ag_situacaoComboBox.FormattingEnabled = true;
+            this.ag_situacaoComboBox.Items.AddRange(new object[] {
+            "Agendado",
+            "Em andamento",
+            "Finalizado"});
+            this.ag_situacaoComboBox.Location = new System.Drawing.Point(440, 153);
+            this.ag_situacaoComboBox.Name = "ag_situacaoComboBox";
+            this.ag_situacaoComboBox.Size = new System.Drawing.Size(121, 33);
+            this.ag_situacaoComboBox.TabIndex = 7;
+            // 
+            // ag_animalLabel
+            // 
+            ag_animalLabel.AutoSize = true;
+            ag_animalLabel.Location = new System.Drawing.Point(316, 195);
+            ag_animalLabel.Name = "ag_animalLabel";
+            ag_animalLabel.Size = new System.Drawing.Size(102, 25);
+            ag_animalLabel.TabIndex = 8;
+            ag_animalLabel.Text = "ag animal:";
+            // 
+            // ag_animalComboBox
+            // 
+            this.ag_animalComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.agendamentoBindingSource, "ag_animal", true));
+            this.ag_animalComboBox.DataSource = this.animalBindingSource;
+            this.ag_animalComboBox.DisplayMember = "ani_nome";
+            this.ag_animalComboBox.FormattingEnabled = true;
+            this.ag_animalComboBox.Location = new System.Drawing.Point(440, 192);
+            this.ag_animalComboBox.Name = "ag_animalComboBox";
+            this.ag_animalComboBox.Size = new System.Drawing.Size(121, 33);
+            this.ag_animalComboBox.TabIndex = 9;
+            this.ag_animalComboBox.ValueMember = "ani_codigo";
+            // 
+            // ag_totalLabel
+            // 
+            ag_totalLabel.AutoSize = true;
+            ag_totalLabel.Location = new System.Drawing.Point(316, 234);
+            ag_totalLabel.Name = "ag_totalLabel";
+            ag_totalLabel.Size = new System.Drawing.Size(81, 25);
+            ag_totalLabel.TabIndex = 10;
+            ag_totalLabel.Text = "ag total:";
+            // 
+            // ag_totalTextBox
+            // 
+            this.ag_totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.agendamentoBindingSource, "ag_total", true));
+            this.ag_totalTextBox.Location = new System.Drawing.Point(440, 231);
+            this.ag_totalTextBox.Name = "ag_totalTextBox";
+            this.ag_totalTextBox.Size = new System.Drawing.Size(121, 30);
+            this.ag_totalTextBox.TabIndex = 11;
+            // 
+            // animalBindingSource
+            // 
+            this.animalBindingSource.DataMember = "animal";
+            this.animalBindingSource.DataSource = this.petshopDataSet;
+            // 
+            // animalTableAdapter
+            // 
+            this.animalTableAdapter.ClearBeforeFill = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.animalBindingSource, "ani_foto", true));
+            this.pictureBox1.Location = new System.Drawing.Point(618, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 127);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // agendamentoBindingNavigator
+            // 
+            this.agendamentoBindingNavigator.AddNewItem = null;
+            this.agendamentoBindingNavigator.BindingSource = this.agendamentoBindingSource;
+            this.agendamentoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.agendamentoBindingNavigator.DeleteItem = null;
+            this.agendamentoBindingNavigator.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.agendamentoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.servicoBindingNavigatorSaveItem,
+            this.btnCancelar,
+            this.btnEditar});
+            this.agendamentoBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.agendamentoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.agendamentoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.agendamentoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.agendamentoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.agendamentoBindingNavigator.Name = "agendamentoBindingNavigator";
+            this.agendamentoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.agendamentoBindingNavigator.Size = new System.Drawing.Size(913, 39);
+            this.agendamentoBindingNavigator.TabIndex = 2;
+            this.agendamentoBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 36);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 39);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(36, 36);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
+            // servicoBindingNavigatorSaveItem
+            // 
+            this.servicoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.servicoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("servicoBindingNavigatorSaveItem.Image")));
+            this.servicoBindingNavigatorSaveItem.Name = "servicoBindingNavigatorSaveItem";
+            this.servicoBindingNavigatorSaveItem.Size = new System.Drawing.Size(36, 36);
+            this.servicoBindingNavigatorSaveItem.Text = "Save Data";
+            this.servicoBindingNavigatorSaveItem.Click += new System.EventHandler(this.servicoBindingNavigatorSaveItem_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(70, 36);
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(52, 36);
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // frmCadAgendamento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(913, 652);
+            this.Controls.Add(this.agendamentoBindingNavigator);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmCadAgendamento";
             this.Text = "frmCadAgendamento";
+            this.Load += new System.EventHandler(this.frmCadAgendamento_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agendamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agendamentoBindingNavigator)).EndInit();
+            this.agendamentoBindingNavigator.ResumeLayout(false);
+            this.agendamentoBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private petshopDataSet petshopDataSet;
+        private System.Windows.Forms.BindingSource agendamentoBindingSource;
+        private petshopDataSetTableAdapters.agendamentoTableAdapter agendamentoTableAdapter;
+        private petshopDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.TextBox ag_codigoTextBox;
+        private System.Windows.Forms.MaskedTextBox ag_dataMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox ag_horarioMaskedTextBox;
+        private System.Windows.Forms.ComboBox ag_situacaoComboBox;
+        private System.Windows.Forms.ComboBox ag_animalComboBox;
+        private System.Windows.Forms.TextBox ag_totalTextBox;
+        private petshopDataSetTableAdapters.animalTableAdapter animalTableAdapter;
+        private System.Windows.Forms.BindingSource animalBindingSource;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.BindingNavigator agendamentoBindingNavigator;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton servicoBindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStripButton btnCancelar;
+        private System.Windows.Forms.ToolStripButton btnEditar;
     }
 }
