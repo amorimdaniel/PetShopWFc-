@@ -27,6 +27,10 @@ namespace ProjetoPetShop
 
         private void frmCadAgendamento_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'petshopDataSet1.servico' table. You can move, or remove it, as needed.
+            this.servicoTableAdapter.Fill(this.petshopDataSet1.servico);
+            // TODO: This line of code loads data into the 'petshopDataSet.View_ServicosAgendamento' table. You can move, or remove it, as needed.
+            this.view_ServicosAgendamentoTableAdapter.Fill(this.petshopDataSet.View_ServicosAgendamento);
             // TODO: This line of code loads data into the 'petshopDataSet.animal' table. You can move, or remove it, as needed.
             this.animalTableAdapter.Fill(this.petshopDataSet.animal);
             // TODO: This line of code loads data into the 'petshopDataSet.agendamento' table. You can move, or remove it, as needed.

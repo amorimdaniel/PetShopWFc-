@@ -412,6 +412,29 @@ SELECT serv_codigo, serv_descricao, serv_preco, serv_tempo FROM servico WHERE (s
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_ServicosAgendamentoTableAdapter" GeneratorDataComponentClassName="View_ServicosAgendamentoTableAdapter" Name="View_ServicosAgendamento" UserDataComponentName="View_ServicosAgendamentoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="petshopConnectionString (Settings)" DbObjectName="petshop.dbo.View_ServicosAgendamento" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ag_serv_numero, ag_serv_agendamento, ag_serv_servico, serv_descricao, serv_tempo, ag_serv_quantidade, ag_serv_valor_unitario, SubTotal FROM dbo.View_ServicosAgendamento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ag_serv_numero" DataSetColumn="ag_serv_numero" />
+              <Mapping SourceColumn="ag_serv_agendamento" DataSetColumn="ag_serv_agendamento" />
+              <Mapping SourceColumn="ag_serv_servico" DataSetColumn="ag_serv_servico" />
+              <Mapping SourceColumn="serv_descricao" DataSetColumn="serv_descricao" />
+              <Mapping SourceColumn="serv_tempo" DataSetColumn="serv_tempo" />
+              <Mapping SourceColumn="ag_serv_quantidade" DataSetColumn="ag_serv_quantidade" />
+              <Mapping SourceColumn="ag_serv_valor_unitario" DataSetColumn="ag_serv_valor_unitario" />
+              <Mapping SourceColumn="SubTotal" DataSetColumn="SubTotal" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -420,7 +443,7 @@ SELECT serv_codigo, serv_descricao, serv_preco, serv_tempo FROM servico WHERE (s
   <xs:element name="petshopDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="petshopDataSet" msprop:Generator_UserDSName="petshopDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="agendamento" msprop:Generator_TableClassName="agendamentoDataTable" msprop:Generator_TableVarName="tableagendamento" msprop:Generator_TablePropName="agendamento" msprop:Generator_RowDeletingName="agendamentoRowDeleting" msprop:Generator_RowChangingName="agendamentoRowChanging" msprop:Generator_RowEvHandlerName="agendamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="agendamentoRowDeleted" msprop:Generator_UserTableName="agendamento" msprop:Generator_RowChangedName="agendamentoRowChanged" msprop:Generator_RowEvArgName="agendamentoRowChangeEvent" msprop:Generator_RowClassName="agendamentoRow">
+        <xs:element name="agendamento" msprop:Generator_TableClassName="agendamentoDataTable" msprop:Generator_TableVarName="tableagendamento" msprop:Generator_RowChangedName="agendamentoRowChanged" msprop:Generator_TablePropName="agendamento" msprop:Generator_RowDeletingName="agendamentoRowDeleting" msprop:Generator_RowChangingName="agendamentoRowChanging" msprop:Generator_RowEvHandlerName="agendamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="agendamentoRowDeleted" msprop:Generator_RowClassName="agendamentoRow" msprop:Generator_UserTableName="agendamento" msprop:Generator_RowEvArgName="agendamentoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ag_codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnag_codigo" msprop:Generator_ColumnPropNameInRow="ag_codigo" msprop:Generator_ColumnPropNameInTable="ag_codigoColumn" msprop:Generator_UserColumnName="ag_codigo" type="xs:int" />
@@ -438,7 +461,7 @@ SELECT serv_codigo, serv_descricao, serv_preco, serv_tempo FROM servico WHERE (s
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="agendamento_servicos" msprop:Generator_TableClassName="agendamento_servicosDataTable" msprop:Generator_TableVarName="tableagendamento_servicos" msprop:Generator_TablePropName="agendamento_servicos" msprop:Generator_RowDeletingName="agendamento_servicosRowDeleting" msprop:Generator_RowChangingName="agendamento_servicosRowChanging" msprop:Generator_RowEvHandlerName="agendamento_servicosRowChangeEventHandler" msprop:Generator_RowDeletedName="agendamento_servicosRowDeleted" msprop:Generator_UserTableName="agendamento_servicos" msprop:Generator_RowChangedName="agendamento_servicosRowChanged" msprop:Generator_RowEvArgName="agendamento_servicosRowChangeEvent" msprop:Generator_RowClassName="agendamento_servicosRow">
+        <xs:element name="agendamento_servicos" msprop:Generator_TableClassName="agendamento_servicosDataTable" msprop:Generator_TableVarName="tableagendamento_servicos" msprop:Generator_RowChangedName="agendamento_servicosRowChanged" msprop:Generator_TablePropName="agendamento_servicos" msprop:Generator_RowDeletingName="agendamento_servicosRowDeleting" msprop:Generator_RowChangingName="agendamento_servicosRowChanging" msprop:Generator_RowEvHandlerName="agendamento_servicosRowChangeEventHandler" msprop:Generator_RowDeletedName="agendamento_servicosRowDeleted" msprop:Generator_RowClassName="agendamento_servicosRow" msprop:Generator_UserTableName="agendamento_servicos" msprop:Generator_RowEvArgName="agendamento_servicosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ag_serv_numero" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnag_serv_numero" msprop:Generator_ColumnPropNameInRow="ag_serv_numero" msprop:Generator_ColumnPropNameInTable="ag_serv_numeroColumn" msprop:Generator_UserColumnName="ag_serv_numero" type="xs:int" />
@@ -449,7 +472,7 @@ SELECT serv_codigo, serv_descricao, serv_preco, serv_tempo FROM servico WHERE (s
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="animal" msprop:Generator_TableClassName="animalDataTable" msprop:Generator_TableVarName="tableanimal" msprop:Generator_TablePropName="animal" msprop:Generator_RowDeletingName="animalRowDeleting" msprop:Generator_RowChangingName="animalRowChanging" msprop:Generator_RowEvHandlerName="animalRowChangeEventHandler" msprop:Generator_RowDeletedName="animalRowDeleted" msprop:Generator_UserTableName="animal" msprop:Generator_RowChangedName="animalRowChanged" msprop:Generator_RowEvArgName="animalRowChangeEvent" msprop:Generator_RowClassName="animalRow">
+        <xs:element name="animal" msprop:Generator_TableClassName="animalDataTable" msprop:Generator_TableVarName="tableanimal" msprop:Generator_RowChangedName="animalRowChanged" msprop:Generator_TablePropName="animal" msprop:Generator_RowDeletingName="animalRowDeleting" msprop:Generator_RowChangingName="animalRowChanging" msprop:Generator_RowEvHandlerName="animalRowChangeEventHandler" msprop:Generator_RowDeletedName="animalRowDeleted" msprop:Generator_RowClassName="animalRow" msprop:Generator_UserTableName="animal" msprop:Generator_RowEvArgName="animalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ani_codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnani_codigo" msprop:Generator_ColumnPropNameInRow="ani_codigo" msprop:Generator_ColumnPropNameInTable="ani_codigoColumn" msprop:Generator_UserColumnName="ani_codigo" type="xs:int" />
@@ -495,7 +518,7 @@ SELECT serv_codigo, serv_descricao, serv_preco, serv_tempo FROM servico WHERE (s
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="cliente" msprop:Generator_TableClassName="clienteDataTable" msprop:Generator_TableVarName="tablecliente" msprop:Generator_TablePropName="cliente" msprop:Generator_RowDeletingName="clienteRowDeleting" msprop:Generator_RowChangingName="clienteRowChanging" msprop:Generator_RowEvHandlerName="clienteRowChangeEventHandler" msprop:Generator_RowDeletedName="clienteRowDeleted" msprop:Generator_UserTableName="cliente" msprop:Generator_RowChangedName="clienteRowChanged" msprop:Generator_RowEvArgName="clienteRowChangeEvent" msprop:Generator_RowClassName="clienteRow">
+        <xs:element name="cliente" msprop:Generator_TableClassName="clienteDataTable" msprop:Generator_TableVarName="tablecliente" msprop:Generator_RowChangedName="clienteRowChanged" msprop:Generator_TablePropName="cliente" msprop:Generator_RowDeletingName="clienteRowDeleting" msprop:Generator_RowChangingName="clienteRowChanging" msprop:Generator_RowEvHandlerName="clienteRowChangeEventHandler" msprop:Generator_RowDeletedName="clienteRowDeleted" msprop:Generator_RowClassName="clienteRow" msprop:Generator_UserTableName="cliente" msprop:Generator_RowEvArgName="clienteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cli_codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncli_codigo" msprop:Generator_ColumnPropNameInRow="cli_codigo" msprop:Generator_ColumnPropNameInTable="cli_codigoColumn" msprop:Generator_UserColumnName="cli_codigo" type="xs:int" />
@@ -538,7 +561,7 @@ SELECT serv_codigo, serv_descricao, serv_preco, serv_tempo FROM servico WHERE (s
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="raca" msprop:Generator_TableClassName="racaDataTable" msprop:Generator_TableVarName="tableraca" msprop:Generator_TablePropName="raca" msprop:Generator_RowDeletingName="racaRowDeleting" msprop:Generator_RowChangingName="racaRowChanging" msprop:Generator_RowEvHandlerName="racaRowChangeEventHandler" msprop:Generator_RowDeletedName="racaRowDeleted" msprop:Generator_UserTableName="raca" msprop:Generator_RowChangedName="racaRowChanged" msprop:Generator_RowEvArgName="racaRowChangeEvent" msprop:Generator_RowClassName="racaRow">
+        <xs:element name="raca" msprop:Generator_TableClassName="racaDataTable" msprop:Generator_TableVarName="tableraca" msprop:Generator_RowChangedName="racaRowChanged" msprop:Generator_TablePropName="raca" msprop:Generator_RowDeletingName="racaRowDeleting" msprop:Generator_RowChangingName="racaRowChanging" msprop:Generator_RowEvHandlerName="racaRowChangeEventHandler" msprop:Generator_RowDeletedName="racaRowDeleted" msprop:Generator_RowClassName="racaRow" msprop:Generator_UserTableName="raca" msprop:Generator_RowEvArgName="racaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="raca_codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnraca_codigo" msprop:Generator_ColumnPropNameInRow="raca_codigo" msprop:Generator_ColumnPropNameInTable="raca_codigoColumn" msprop:Generator_UserColumnName="raca_codigo" type="xs:int" />
@@ -559,7 +582,7 @@ SELECT serv_codigo, serv_descricao, serv_preco, serv_tempo FROM servico WHERE (s
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="servico" msprop:Generator_TableClassName="servicoDataTable" msprop:Generator_TableVarName="tableservico" msprop:Generator_TablePropName="servico" msprop:Generator_RowDeletingName="servicoRowDeleting" msprop:Generator_RowChangingName="servicoRowChanging" msprop:Generator_RowEvHandlerName="servicoRowChangeEventHandler" msprop:Generator_RowDeletedName="servicoRowDeleted" msprop:Generator_UserTableName="servico" msprop:Generator_RowChangedName="servicoRowChanged" msprop:Generator_RowEvArgName="servicoRowChangeEvent" msprop:Generator_RowClassName="servicoRow">
+        <xs:element name="servico" msprop:Generator_TableClassName="servicoDataTable" msprop:Generator_TableVarName="tableservico" msprop:Generator_RowChangedName="servicoRowChanged" msprop:Generator_TablePropName="servico" msprop:Generator_RowDeletingName="servicoRowDeleting" msprop:Generator_RowChangingName="servicoRowChanging" msprop:Generator_RowEvHandlerName="servicoRowChangeEventHandler" msprop:Generator_RowDeletedName="servicoRowDeleted" msprop:Generator_RowClassName="servicoRow" msprop:Generator_UserTableName="servico" msprop:Generator_RowEvArgName="servicoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="serv_codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnserv_codigo" msprop:Generator_ColumnPropNameInRow="serv_codigo" msprop:Generator_ColumnPropNameInTable="serv_codigoColumn" msprop:Generator_UserColumnName="serv_codigo" type="xs:int" />
@@ -572,6 +595,26 @@ SELECT serv_codigo, serv_descricao, serv_preco, serv_tempo FROM servico WHERE (s
               </xs:element>
               <xs:element name="serv_preco" msprop:Generator_ColumnVarNameInTable="columnserv_preco" msprop:Generator_ColumnPropNameInRow="serv_preco" msprop:Generator_ColumnPropNameInTable="serv_precoColumn" msprop:Generator_UserColumnName="serv_preco" type="xs:decimal" />
               <xs:element name="serv_tempo" msprop:Generator_ColumnVarNameInTable="columnserv_tempo" msprop:Generator_ColumnPropNameInRow="serv_tempo" msprop:Generator_ColumnPropNameInTable="serv_tempoColumn" msprop:Generator_UserColumnName="serv_tempo" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_ServicosAgendamento" msprop:Generator_TableClassName="View_ServicosAgendamentoDataTable" msprop:Generator_TableVarName="tableView_ServicosAgendamento" msprop:Generator_TablePropName="View_ServicosAgendamento" msprop:Generator_RowDeletingName="View_ServicosAgendamentoRowDeleting" msprop:Generator_RowChangingName="View_ServicosAgendamentoRowChanging" msprop:Generator_RowEvHandlerName="View_ServicosAgendamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="View_ServicosAgendamentoRowDeleted" msprop:Generator_UserTableName="View_ServicosAgendamento" msprop:Generator_RowChangedName="View_ServicosAgendamentoRowChanged" msprop:Generator_RowEvArgName="View_ServicosAgendamentoRowChangeEvent" msprop:Generator_RowClassName="View_ServicosAgendamentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ag_serv_numero" msprop:Generator_ColumnVarNameInTable="columnag_serv_numero" msprop:Generator_ColumnPropNameInRow="ag_serv_numero" msprop:Generator_ColumnPropNameInTable="ag_serv_numeroColumn" msprop:Generator_UserColumnName="ag_serv_numero" type="xs:int" />
+              <xs:element name="ag_serv_agendamento" msprop:Generator_ColumnVarNameInTable="columnag_serv_agendamento" msprop:Generator_ColumnPropNameInRow="ag_serv_agendamento" msprop:Generator_ColumnPropNameInTable="ag_serv_agendamentoColumn" msprop:Generator_UserColumnName="ag_serv_agendamento" type="xs:int" />
+              <xs:element name="ag_serv_servico" msprop:Generator_ColumnVarNameInTable="columnag_serv_servico" msprop:Generator_ColumnPropNameInRow="ag_serv_servico" msprop:Generator_ColumnPropNameInTable="ag_serv_servicoColumn" msprop:Generator_UserColumnName="ag_serv_servico" type="xs:int" />
+              <xs:element name="serv_descricao" msprop:Generator_ColumnVarNameInTable="columnserv_descricao" msprop:Generator_ColumnPropNameInRow="serv_descricao" msprop:Generator_ColumnPropNameInTable="serv_descricaoColumn" msprop:Generator_UserColumnName="serv_descricao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="serv_tempo" msprop:Generator_ColumnVarNameInTable="columnserv_tempo" msprop:Generator_ColumnPropNameInRow="serv_tempo" msprop:Generator_ColumnPropNameInTable="serv_tempoColumn" msprop:Generator_UserColumnName="serv_tempo" type="xs:int" minOccurs="0" />
+              <xs:element name="ag_serv_quantidade" msprop:Generator_ColumnVarNameInTable="columnag_serv_quantidade" msprop:Generator_ColumnPropNameInRow="ag_serv_quantidade" msprop:Generator_ColumnPropNameInTable="ag_serv_quantidadeColumn" msprop:Generator_UserColumnName="ag_serv_quantidade" type="xs:int" />
+              <xs:element name="ag_serv_valor_unitario" msprop:Generator_ColumnVarNameInTable="columnag_serv_valor_unitario" msprop:Generator_ColumnPropNameInRow="ag_serv_valor_unitario" msprop:Generator_ColumnPropNameInTable="ag_serv_valor_unitarioColumn" msprop:Generator_UserColumnName="ag_serv_valor_unitario" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SubTotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSubTotal" msprop:Generator_ColumnPropNameInRow="SubTotal" msprop:Generator_ColumnPropNameInTable="SubTotalColumn" msprop:Generator_UserColumnName="SubTotal" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -601,14 +644,18 @@ SELECT serv_codigo, serv_descricao, serv_preco, serv_tempo FROM servico WHERE (s
       <xs:selector xpath=".//mstns:servico" />
       <xs:field xpath="mstns:serv_codigo" />
     </xs:unique>
+    <xs:unique name="View_ServicosAgendamento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_ServicosAgendamento" />
+      <xs:field xpath="mstns:ag_serv_numero" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__agendamen__ag_an__30F848ED" msdata:parent="animal" msdata:child="agendamento" msdata:parentkey="ani_codigo" msdata:childkey="ag_animal" msprop:Generator_UserChildTable="agendamento" msprop:Generator_ChildPropName="GetagendamentoRows" msprop:Generator_UserRelationName="FK__agendamen__ag_an__30F848ED" msprop:Generator_RelationVarName="relationFK__agendamen__ag_an__30F848ED" msprop:Generator_UserParentTable="animal" msprop:Generator_ParentPropName="animalRow" />
-      <msdata:Relationship name="FK__agendamen__ag_se__31EC6D26" msdata:parent="servico" msdata:child="agendamento_servicos" msdata:parentkey="serv_codigo" msdata:childkey="ag_serv_servico" msprop:Generator_UserChildTable="agendamento_servicos" msprop:Generator_ChildPropName="Getagendamento_servicosRows" msprop:Generator_UserRelationName="FK__agendamen__ag_se__31EC6D26" msprop:Generator_RelationVarName="relationFK__agendamen__ag_se__31EC6D26" msprop:Generator_UserParentTable="servico" msprop:Generator_ParentPropName="servicoRow" />
-      <msdata:Relationship name="FK__agendamen__ag_se__32E0915F" msdata:parent="agendamento" msdata:child="agendamento_servicos" msdata:parentkey="ag_codigo" msdata:childkey="ag_serv_agendamento" msprop:Generator_UserChildTable="agendamento_servicos" msprop:Generator_ChildPropName="Getagendamento_servicosRows" msprop:Generator_UserRelationName="FK__agendamen__ag_se__32E0915F" msprop:Generator_ParentPropName="agendamentoRow" msprop:Generator_RelationVarName="relationFK__agendamen__ag_se__32E0915F" msprop:Generator_UserParentTable="agendamento" />
-      <msdata:Relationship name="FK__animal__ani_clie__2F10007B" msdata:parent="cliente" msdata:child="animal" msdata:parentkey="cli_codigo" msdata:childkey="ani_cliente" msprop:Generator_UserChildTable="animal" msprop:Generator_ChildPropName="GetanimalRows" msprop:Generator_UserRelationName="FK__animal__ani_clie__2F10007B" msprop:Generator_RelationVarName="relationFK__animal__ani_clie__2F10007B" msprop:Generator_UserParentTable="cliente" msprop:Generator_ParentPropName="clienteRow" />
-      <msdata:Relationship name="FK__animal__ani_raca__300424B4" msdata:parent="raca" msdata:child="animal" msdata:parentkey="raca_codigo" msdata:childkey="ani_raca" msprop:Generator_UserChildTable="animal" msprop:Generator_ChildPropName="GetanimalRows" msprop:Generator_UserRelationName="FK__animal__ani_raca__300424B4" msprop:Generator_RelationVarName="relationFK__animal__ani_raca__300424B4" msprop:Generator_UserParentTable="raca" msprop:Generator_ParentPropName="racaRow" />
+      <msdata:Relationship name="FK__agendamen__ag_an__30F848ED" msdata:parent="animal" msdata:child="agendamento" msdata:parentkey="ani_codigo" msdata:childkey="ag_animal" msprop:Generator_UserChildTable="agendamento" msprop:Generator_ChildPropName="GetagendamentoRows" msprop:Generator_UserRelationName="FK__agendamen__ag_an__30F848ED" msprop:Generator_ParentPropName="animalRow" msprop:Generator_RelationVarName="relationFK__agendamen__ag_an__30F848ED" msprop:Generator_UserParentTable="animal" />
+      <msdata:Relationship name="FK__agendamen__ag_se__31EC6D26" msdata:parent="servico" msdata:child="agendamento_servicos" msdata:parentkey="serv_codigo" msdata:childkey="ag_serv_servico" msprop:Generator_UserChildTable="agendamento_servicos" msprop:Generator_ChildPropName="Getagendamento_servicosRows" msprop:Generator_UserRelationName="FK__agendamen__ag_se__31EC6D26" msprop:Generator_ParentPropName="servicoRow" msprop:Generator_RelationVarName="relationFK__agendamen__ag_se__31EC6D26" msprop:Generator_UserParentTable="servico" />
+      <msdata:Relationship name="FK__agendamen__ag_se__32E0915F" msdata:parent="agendamento" msdata:child="agendamento_servicos" msdata:parentkey="ag_codigo" msdata:childkey="ag_serv_agendamento" msprop:Generator_UserChildTable="agendamento_servicos" msprop:Generator_ChildPropName="Getagendamento_servicosRows" msprop:Generator_UserRelationName="FK__agendamen__ag_se__32E0915F" msprop:Generator_RelationVarName="relationFK__agendamen__ag_se__32E0915F" msprop:Generator_UserParentTable="agendamento" msprop:Generator_ParentPropName="agendamentoRow" />
+      <msdata:Relationship name="FK__animal__ani_clie__2F10007B" msdata:parent="cliente" msdata:child="animal" msdata:parentkey="cli_codigo" msdata:childkey="ani_cliente" msprop:Generator_UserChildTable="animal" msprop:Generator_ChildPropName="GetanimalRows" msprop:Generator_UserRelationName="FK__animal__ani_clie__2F10007B" msprop:Generator_ParentPropName="clienteRow" msprop:Generator_RelationVarName="relationFK__animal__ani_clie__2F10007B" msprop:Generator_UserParentTable="cliente" />
+      <msdata:Relationship name="FK__animal__ani_raca__300424B4" msdata:parent="raca" msdata:child="animal" msdata:parentkey="raca_codigo" msdata:childkey="ani_raca" msprop:Generator_UserChildTable="animal" msprop:Generator_ChildPropName="GetanimalRows" msprop:Generator_UserRelationName="FK__animal__ani_raca__300424B4" msprop:Generator_ParentPropName="racaRow" msprop:Generator_RelationVarName="relationFK__animal__ani_raca__300424B4" msprop:Generator_UserParentTable="raca" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
