@@ -95,5 +95,32 @@ namespace ProjetoPetShop
                 MessageBox.Show("Não pode ser excluído");
             }
         }
+
+        private void txtCodServico_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter && txtCodServico.Text != "")
+            {
+
+            }
+        }
+
+        private void txtCodServico_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && txtCodServico.Text != "")
+            {
+                servicoBindingSource.Filter = "serv_codigo = " + txtCodServico.Text;
+                if(servicoBindingSource.Count == 1)
+                {
+                    DataRowView ServicoEncontrado = (DataRowView)servicoBindingSource.Current;
+                    txtServico.Text = ServicoEncontrado["serv_descricao"].ToString();
+                    txtValorUnitario.Text = ServicoEncontrado["serv_preco"].ToString();
+                }
+                else
+                {
+                    frmCadServico serv = new frmCadServico();
+                    serv.ShowDialog();
+                }
+            }
+        }
     }
 }

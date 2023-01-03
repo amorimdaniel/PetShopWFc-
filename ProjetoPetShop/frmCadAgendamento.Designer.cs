@@ -36,9 +36,9 @@ namespace ProjetoPetShop
             System.Windows.Forms.Label ag_situacaoLabel;
             System.Windows.Forms.Label ag_animalLabel;
             System.Windows.Forms.Label ag_totalLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadAgendamento));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,6 +51,26 @@ namespace ProjetoPetShop
             this.ag_animalComboBox = new System.Windows.Forms.ComboBox();
             this.ag_totalTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtServico = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtValorUnitario = new System.Windows.Forms.TextBox();
+            this.btnAddServico = new System.Windows.Forms.Button();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.view_ServicosAgendamentoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.view_ServicosAgendamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.servicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.petshopDataSet1 = new ProjetoPetShop.petshopDataSet();
             this.agendamentoTableAdapter = new ProjetoPetShop.petshopDataSetTableAdapters.agendamentoTableAdapter();
             this.tableAdapterManager = new ProjetoPetShop.petshopDataSetTableAdapters.TableAdapterManager();
             this.animalTableAdapter = new ProjetoPetShop.petshopDataSetTableAdapters.animalTableAdapter();
@@ -69,29 +89,9 @@ namespace ProjetoPetShop
             this.servicoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.view_ServicosAgendamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.view_ServicosAgendamentoTableAdapter = new ProjetoPetShop.petshopDataSetTableAdapters.View_ServicosAgendamentoTableAdapter();
-            this.view_ServicosAgendamentoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCodServico = new System.Windows.Forms.TextBox();
-            this.cmbServico = new System.Windows.Forms.ComboBox();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.btnAddServico = new System.Windows.Forms.Button();
-            this.txtValorUnitario = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.petshopDataSet1 = new ProjetoPetShop.petshopDataSet();
-            this.servicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.servicoTableAdapter = new ProjetoPetShop.petshopDataSetTableAdapters.servicoTableAdapter();
+            this.txtCodServico = new System.Windows.Forms.MaskedTextBox();
             ag_codigoLabel = new System.Windows.Forms.Label();
             ag_dataLabel = new System.Windows.Forms.Label();
             ag_horarioLabel = new System.Windows.Forms.Label();
@@ -104,12 +104,12 @@ namespace ProjetoPetShop
             ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agendamentoBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.view_ServicosAgendamentoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.view_ServicosAgendamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agendamentoBindingNavigator)).BeginInit();
             this.agendamentoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.view_ServicosAgendamentoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.view_ServicosAgendamentoDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ag_codigoLabel
@@ -279,6 +279,8 @@ namespace ProjetoPetShop
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtCodServico);
+            this.groupBox2.Controls.Add(this.txtServico);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -286,10 +288,8 @@ namespace ProjetoPetShop
             this.groupBox2.Controls.Add(this.txtValorUnitario);
             this.groupBox2.Controls.Add(this.btnAddServico);
             this.groupBox2.Controls.Add(this.txtQuantidade);
-            this.groupBox2.Controls.Add(this.cmbServico);
-            this.groupBox2.Controls.Add(this.txtCodServico);
             this.groupBox2.Controls.Add(this.view_ServicosAgendamentoDataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(13, 311);
+            this.groupBox2.Location = new System.Drawing.Point(13, 304);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -297,6 +297,196 @@ namespace ProjetoPetShop
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Serviço";
+            // 
+            // txtServico
+            // 
+            this.txtServico.Location = new System.Drawing.Point(116, 53);
+            this.txtServico.Name = "txtServico";
+            this.txtServico.Size = new System.Drawing.Size(322, 30);
+            this.txtServico.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(434, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Valor";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(324, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 25);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Quantidade";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(146, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 25);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Descrição";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Código";
+            // 
+            // txtValorUnitario
+            // 
+            this.txtValorUnitario.Location = new System.Drawing.Point(576, 53);
+            this.txtValorUnitario.Name = "txtValorUnitario";
+            this.txtValorUnitario.Size = new System.Drawing.Size(100, 30);
+            this.txtValorUnitario.TabIndex = 5;
+            // 
+            // btnAddServico
+            // 
+            this.btnAddServico.Location = new System.Drawing.Point(685, 49);
+            this.btnAddServico.Name = "btnAddServico";
+            this.btnAddServico.Size = new System.Drawing.Size(35, 38);
+            this.btnAddServico.TabIndex = 4;
+            this.btnAddServico.Text = "+";
+            this.btnAddServico.UseVisualStyleBackColor = true;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(470, 53);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(100, 30);
+            this.txtQuantidade.TabIndex = 3;
+            // 
+            // view_ServicosAgendamentoDataGridView
+            // 
+            this.view_ServicosAgendamentoDataGridView.AllowUserToAddRows = false;
+            this.view_ServicosAgendamentoDataGridView.AllowUserToDeleteRows = false;
+            this.view_ServicosAgendamentoDataGridView.AutoGenerateColumns = false;
+            this.view_ServicosAgendamentoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.view_ServicosAgendamentoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.view_ServicosAgendamentoDataGridView.DataSource = this.view_ServicosAgendamentoBindingSource;
+            this.view_ServicosAgendamentoDataGridView.Location = new System.Drawing.Point(7, 95);
+            this.view_ServicosAgendamentoDataGridView.Name = "view_ServicosAgendamentoDataGridView";
+            this.view_ServicosAgendamentoDataGridView.ReadOnly = true;
+            this.view_ServicosAgendamentoDataGridView.RowHeadersWidth = 51;
+            this.view_ServicosAgendamentoDataGridView.RowTemplate.Height = 24;
+            this.view_ServicosAgendamentoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.view_ServicosAgendamentoDataGridView.Size = new System.Drawing.Size(873, 241);
+            this.view_ServicosAgendamentoDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ag_serv_numero";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Número";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ag_serv_agendamento";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ag_serv_agendamento";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ag_serv_servico";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ag_serv_servico";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "serv_descricao";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "serv_tempo";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Tempo";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 103;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ag_serv_quantidade";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Qtd";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 73;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "ag_serv_valor_unitario";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Valor Unitário";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 158;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "SubTotal";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn8.HeaderText = "SubTotal";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // view_ServicosAgendamentoBindingSource
+            // 
+            this.view_ServicosAgendamentoBindingSource.DataMember = "View_ServicosAgendamento";
+            this.view_ServicosAgendamentoBindingSource.DataSource = this.petshopDataSet;
+            // 
+            // servicoBindingSource
+            // 
+            this.servicoBindingSource.DataMember = "servico";
+            this.servicoBindingSource.DataSource = this.petshopDataSet1;
+            // 
+            // petshopDataSet1
+            // 
+            this.petshopDataSet1.DataSetName = "petshopDataSet";
+            this.petshopDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // agendamentoTableAdapter
             // 
@@ -384,6 +574,7 @@ namespace ProjetoPetShop
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -466,210 +657,21 @@ namespace ProjetoPetShop
             this.btnEditar.Text = "Editar";
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // view_ServicosAgendamentoBindingSource
-            // 
-            this.view_ServicosAgendamentoBindingSource.DataMember = "View_ServicosAgendamento";
-            this.view_ServicosAgendamentoBindingSource.DataSource = this.petshopDataSet;
-            // 
             // view_ServicosAgendamentoTableAdapter
             // 
             this.view_ServicosAgendamentoTableAdapter.ClearBeforeFill = true;
             // 
-            // view_ServicosAgendamentoDataGridView
-            // 
-            this.view_ServicosAgendamentoDataGridView.AllowUserToAddRows = false;
-            this.view_ServicosAgendamentoDataGridView.AllowUserToDeleteRows = false;
-            this.view_ServicosAgendamentoDataGridView.AutoGenerateColumns = false;
-            this.view_ServicosAgendamentoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.view_ServicosAgendamentoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.view_ServicosAgendamentoDataGridView.DataSource = this.view_ServicosAgendamentoBindingSource;
-            this.view_ServicosAgendamentoDataGridView.Location = new System.Drawing.Point(7, 95);
-            this.view_ServicosAgendamentoDataGridView.Name = "view_ServicosAgendamentoDataGridView";
-            this.view_ServicosAgendamentoDataGridView.ReadOnly = true;
-            this.view_ServicosAgendamentoDataGridView.RowHeadersWidth = 51;
-            this.view_ServicosAgendamentoDataGridView.RowTemplate.Height = 24;
-            this.view_ServicosAgendamentoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.view_ServicosAgendamentoDataGridView.Size = new System.Drawing.Size(873, 264);
-            this.view_ServicosAgendamentoDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ag_serv_numero";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ag_serv_numero";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ag_serv_agendamento";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ag_serv_agendamento";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ag_serv_servico";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ag_serv_servico";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "serv_descricao";
-            this.dataGridViewTextBoxColumn4.HeaderText = "serv_descricao";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "serv_tempo";
-            this.dataGridViewTextBoxColumn5.HeaderText = "serv_tempo";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 20;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "ag_serv_quantidade";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ag_serv_quantidade";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "ag_serv_valor_unitario";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn7.HeaderText = "ag_serv_valor_unitario";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "SubTotal";
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn8.HeaderText = "SubTotal";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 125;
-            // 
-            // txtCodServico
-            // 
-            this.txtCodServico.Location = new System.Drawing.Point(9, 54);
-            this.txtCodServico.Name = "txtCodServico";
-            this.txtCodServico.Size = new System.Drawing.Size(100, 30);
-            this.txtCodServico.TabIndex = 1;
-            // 
-            // cmbServico
-            // 
-            this.cmbServico.DataSource = this.servicoBindingSource;
-            this.cmbServico.DisplayMember = "serv_descricao";
-            this.cmbServico.FormattingEnabled = true;
-            this.cmbServico.Location = new System.Drawing.Point(115, 54);
-            this.cmbServico.Name = "cmbServico";
-            this.cmbServico.Size = new System.Drawing.Size(202, 33);
-            this.cmbServico.TabIndex = 2;
-            this.cmbServico.ValueMember = "serv_codigo";
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(323, 54);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(100, 30);
-            this.txtQuantidade.TabIndex = 3;
-            // 
-            // btnAddServico
-            // 
-            this.btnAddServico.Location = new System.Drawing.Point(538, 51);
-            this.btnAddServico.Name = "btnAddServico";
-            this.btnAddServico.Size = new System.Drawing.Size(35, 38);
-            this.btnAddServico.TabIndex = 4;
-            this.btnAddServico.Text = "+";
-            this.btnAddServico.UseVisualStyleBackColor = true;
-            // 
-            // txtValorUnitario
-            // 
-            this.txtValorUnitario.Location = new System.Drawing.Point(429, 54);
-            this.txtValorUnitario.Name = "txtValorUnitario";
-            this.txtValorUnitario.Size = new System.Drawing.Size(100, 30);
-            this.txtValorUnitario.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Código";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(146, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 25);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Descrição";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(324, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 25);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Quantidade";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(434, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 25);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Valor";
-            // 
-            // petshopDataSet1
-            // 
-            this.petshopDataSet1.DataSetName = "petshopDataSet";
-            this.petshopDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // servicoBindingSource
-            // 
-            this.servicoBindingSource.DataMember = "servico";
-            this.servicoBindingSource.DataSource = this.petshopDataSet1;
-            // 
             // servicoTableAdapter
             // 
             this.servicoTableAdapter.ClearBeforeFill = true;
+            // 
+            // txtCodServico
+            // 
+            this.txtCodServico.Location = new System.Drawing.Point(10, 53);
+            this.txtCodServico.Name = "txtCodServico";
+            this.txtCodServico.Size = new System.Drawing.Size(100, 30);
+            this.txtCodServico.TabIndex = 11;
+            this.txtCodServico.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodServico_KeyDown_1);
             // 
             // frmCadAgendamento
             // 
@@ -694,13 +696,13 @@ namespace ProjetoPetShop
             ((System.ComponentModel.ISupportInitialize)(this.agendamentoBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.view_ServicosAgendamentoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.view_ServicosAgendamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agendamentoBindingNavigator)).EndInit();
             this.agendamentoBindingNavigator.ResumeLayout(false);
             this.agendamentoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.view_ServicosAgendamentoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.view_ServicosAgendamentoDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petshopDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -741,6 +743,16 @@ namespace ProjetoPetShop
         private System.Windows.Forms.BindingSource view_ServicosAgendamentoBindingSource;
         private petshopDataSetTableAdapters.View_ServicosAgendamentoTableAdapter view_ServicosAgendamentoTableAdapter;
         private System.Windows.Forms.DataGridView view_ServicosAgendamentoDataGridView;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtValorUnitario;
+        private System.Windows.Forms.Button btnAddServico;
+        private System.Windows.Forms.TextBox txtQuantidade;
+        private petshopDataSet petshopDataSet1;
+        private System.Windows.Forms.BindingSource servicoBindingSource;
+        private petshopDataSetTableAdapters.servicoTableAdapter servicoTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -749,17 +761,7 @@ namespace ProjetoPetShop
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtValorUnitario;
-        private System.Windows.Forms.Button btnAddServico;
-        private System.Windows.Forms.TextBox txtQuantidade;
-        private System.Windows.Forms.ComboBox cmbServico;
-        private System.Windows.Forms.TextBox txtCodServico;
-        private petshopDataSet petshopDataSet1;
-        private System.Windows.Forms.BindingSource servicoBindingSource;
-        private petshopDataSetTableAdapters.servicoTableAdapter servicoTableAdapter;
+        private System.Windows.Forms.TextBox txtServico;
+        private System.Windows.Forms.MaskedTextBox txtCodServico;
     }
 }
